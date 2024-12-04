@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const BmiCal());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class BmiCal extends StatelessWidget {
+  const BmiCal({super.key});
 
   @override
   Widget build(BuildContext context) {
