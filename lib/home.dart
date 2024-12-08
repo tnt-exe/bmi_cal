@@ -1,6 +1,10 @@
 import 'package:bmi_cal/bmi_card.dart';
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF1D1E33);
+const bottomContainerColor = Colors.pink;
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
@@ -16,50 +20,56 @@ class _HomePageState extends State<HomePage> {
           child: Text("BMI CALCULATOR"),
         ),
       ),
-      body: const Column(
+      body: Column(
         children: [
-          Expanded(
+          const Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: BmiCard(
-                    color: Color(0xFF1D1E33),
+                    color: activeCardColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    color: Color(0xFF1D1E33),
+                    color: activeCardColor,
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: BmiCard(
-                    color: Color(0xFF1D1E33),
+                    color: activeCardColor,
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: const Row(
+          const Expanded(
+            child: Row(
               children: [
                 Expanded(
                   child: BmiCard(
-                    color: Color(0xFF1D1E33),
+                    color: activeCardColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    color: Color(0xFF1D1E33),
+                    color: activeCardColor,
                   ),
                 ),
               ],
             ),
+          ),
+          Container(
+            color: bottomContainerColor,
+            margin: const EdgeInsets.only(top: 10),
+            width: double.infinity,
+            height: bottomContainerHeight,
           ),
         ],
       ),
