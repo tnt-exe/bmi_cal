@@ -36,38 +36,34 @@ class _HomePageState extends State<HomePage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: BmiCard(
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: BmiCard(
-                      color: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      child: const IconContent(
-                        icon: FontAwesomeIcons.mars,
-                        label: "MALE",
-                      ),
+                    color: selectedGender == Gender.male
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: const IconContent(
+                      icon: FontAwesomeIcons.mars,
+                      label: "MALE",
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: BmiCard(
+                    onPressed: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: BmiCard(
-                      color: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      child: const IconContent(
-                        icon: FontAwesomeIcons.venus,
-                        label: "FEMALE",
-                      ),
+                    color: selectedGender == Gender.female
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: const IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: "FEMALE",
                     ),
                   ),
                 ),
