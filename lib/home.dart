@@ -8,6 +8,11 @@ const activeCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 const bottomContainerColor = Colors.pink;
 
+enum Gender {
+  male,
+  female,
+}
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
@@ -18,8 +23,8 @@ class _HomePageState extends State<HomePage> {
   Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;
 
-  void updateColor(int gender) {
-    if (gender == 1) {
+  void updateColor(Gender gender) {
+    if (gender == Gender.male) {
       if (maleCardColor == inactiveCardColor) {
         maleCardColor = activeCardColor;
         femaleCardColor = inactiveCardColor;
@@ -53,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(1);
+                        updateColor(Gender.male);
                       });
                     },
                     child: BmiCard(
@@ -69,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        updateColor(2);
+                        updateColor(Gender.female);
                       });
                     },
                     child: BmiCard(
