@@ -28,9 +28,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("DEAD SIMPLE BMI CALCULATOR"),
-        ),
+        title: const Text("DEAD SIMPLE BMI CALCULATOR"),
+        centerTitle: true,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
