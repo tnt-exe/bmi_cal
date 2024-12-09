@@ -27,6 +27,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -71,8 +72,27 @@ class _HomePageState extends State<HomePage> {
               child: BmiCard(
                 color: kActiveCardColor,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("HEIGHT"),
+                    Text(
+                      "HEIGHT",
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(
+                          "180",
+                          style: kNumberTextStyle,
+                        ),
+                        Text(
+                          "cm",
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
