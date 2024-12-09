@@ -4,7 +4,14 @@ import 'package:bmi_cal/common/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  final String bmiResult;
+  final Map<String, String> resultDescription;
+
+  const ResultsPage({
+    super.key,
+    required this.bmiResult,
+    required this.resultDescription,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +34,7 @@ class ResultsPage extends StatelessWidget {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 5,
             child: BmiCard(
               color: kActiveCardColor,
@@ -36,15 +43,15 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Normal",
+                    resultDescription["result"]!.toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    "18.3",
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    "You have a normal body weight. Good job!",
+                    resultDescription["description"]!,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   ),
