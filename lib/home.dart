@@ -1,6 +1,7 @@
 import 'package:bmi_cal/bmi_card.dart';
 import 'package:bmi_cal/constants.dart';
 import 'package:bmi_cal/icon_content.dart';
+import 'package:bmi_cal/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -18,6 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Gender? selectedGender;
   double height = 170;
+  double weight = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -122,15 +124,42 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Row(
               children: [
                 Expanded(
                   child: BmiCard(
                     color: kActiveCardColor,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "WEIGHT",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          weight.round().toInt().toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: BmiCard(
                     color: kActiveCardColor,
                   ),
