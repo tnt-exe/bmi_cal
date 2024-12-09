@@ -1,6 +1,8 @@
 import 'package:bmi_cal/bmi_card.dart';
+import 'package:bmi_cal/bottom_button.dart';
 import 'package:bmi_cal/constants.dart';
 import 'package:bmi_cal/icon_content.dart';
+import 'package:bmi_cal/results.dart';
 import 'package:bmi_cal/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -27,7 +29,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-          child: Text("BMI CALCULATOR"),
+          child: Text("DEAD SIMPLE BMI CALCULATOR"),
         ),
       ),
       body: Column(
@@ -215,11 +217,16 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Container(
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10),
-            width: double.infinity,
-            height: kBottomContainerHeight,
+          BottomButton(
+            text: "CALCULATE",
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ResultsPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
