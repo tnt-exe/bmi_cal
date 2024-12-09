@@ -1,9 +1,9 @@
-import 'package:bmi_cal/bmi_card.dart';
-import 'package:bmi_cal/bottom_button.dart';
-import 'package:bmi_cal/constants.dart';
-import 'package:bmi_cal/icon_content.dart';
-import 'package:bmi_cal/results.dart';
-import 'package:bmi_cal/round_icon_button.dart';
+import 'package:bmi_cal/widgets/bmi_card.dart';
+import 'package:bmi_cal/widgets/bottom_button.dart';
+import 'package:bmi_cal/common/constants.dart';
+import 'package:bmi_cal/widgets/icon_content.dart';
+import 'package:bmi_cal/screens/results.dart';
+import 'package:bmi_cal/widgets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
