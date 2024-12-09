@@ -19,7 +19,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Gender? selectedGender;
   double height = 170;
-  double weight = 60;
+  int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -138,17 +139,17 @@ class _HomePageState extends State<HomePage> {
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          weight.round().toInt().toString(),
+                          weight.toString(),
                           style: kNumberTextStyle,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
-                              icon: FontAwesomeIcons.plus,
+                              icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  weight++;
+                                  weight--;
                                 });
                               },
                             ),
@@ -156,10 +157,10 @@ class _HomePageState extends State<HomePage> {
                               width: 10,
                             ),
                             RoundIconButton(
-                              icon: FontAwesomeIcons.minus,
+                              icon: FontAwesomeIcons.plus,
                               onPressed: () {
                                 setState(() {
-                                  weight--;
+                                  weight++;
                                 });
                               },
                             ),
@@ -169,9 +170,46 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                const Expanded(
+                Expanded(
                   child: BmiCard(
                     color: kActiveCardColor,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "AGE",
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
