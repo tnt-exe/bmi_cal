@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  weight--;
+                                  weight == 0 ? weight = 0 : weight--;
                                 });
                               },
                             ),
@@ -191,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.minus,
                               onPressed: () {
                                 setState(() {
-                                  age--;
+                                  age == 0 ? age = 0 : age--;
                                 });
                               },
                             ),
