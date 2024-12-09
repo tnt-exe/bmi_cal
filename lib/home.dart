@@ -1,12 +1,8 @@
 import 'package:bmi_cal/bmi_card.dart';
+import 'package:bmi_cal/constants.dart';
 import 'package:bmi_cal/icon_content.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF111328);
-const bottomContainerColor = Colors.pink;
 
 enum Gender {
   male,
@@ -43,8 +39,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     color: selectedGender == Gender.male
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     child: const IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: "MALE",
@@ -59,8 +55,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     color: selectedGender == Gender.female
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                     child: const IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: "FEMALE",
@@ -71,14 +67,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: BmiCard(
-                    color: activeCardColor,
-                  ),
+            child: Expanded(
+              child: BmiCard(
+                color: kActiveCardColor,
+                child: Column(
+                  children: [
+                    Text("HEIGHT"),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
           const Expanded(
@@ -86,22 +83,22 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Expanded(
                   child: BmiCard(
-                    color: activeCardColor,
+                    color: kActiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: BmiCard(
-                    color: activeCardColor,
+                    color: kActiveCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: const EdgeInsets.only(top: 10),
             width: double.infinity,
-            height: bottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
