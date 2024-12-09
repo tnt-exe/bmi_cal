@@ -17,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Gender? selectedGender;
+  double height = 170;
 
   @override
   Widget build(BuildContext context) {
@@ -67,14 +68,14 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Expanded(
               child: BmiCard(
                 color: kActiveCardColor,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "HEIGHT",
                       style: kLabelTextStyle,
                     ),
@@ -84,14 +85,25 @@ class _HomePageState extends State<HomePage> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
-                          "180",
+                          height.round().toInt().toString(),
                           style: kNumberTextStyle,
                         ),
-                        Text(
+                        const Text(
                           "cm",
                           style: kLabelTextStyle,
                         ),
                       ],
+                    ),
+                    Slider(
+                      value: height,
+                      min: 100,
+                      max: 200,
+                      activeColor: kBottomContainerColor,
+                      onChanged: (value) {
+                        setState(() {
+                          height = value;
+                        });
+                      },
                     ),
                   ],
                 ),
