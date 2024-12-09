@@ -141,17 +141,27 @@ class _HomePageState extends State<HomePage> {
                           weight.round().toInt().toString(),
                           style: kNumberTextStyle,
                         ),
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                              },
                             ),
                           ],
                         ),
