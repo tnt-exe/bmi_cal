@@ -17,8 +17,21 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons:
   flutter_lints: ^4.0.0
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: false
+  image_path: "assets/bmi_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/bmi_icon.png"
+  adaptive_icon_foreground_inset: 30
+  web:
+    generate: true
+    image_path: "assets/bmi_icon.png"
+    background_color: "#FFFFFF"
+    theme_color: "#FFFFFF"
 
 flutter:
   uses-material-design: true
